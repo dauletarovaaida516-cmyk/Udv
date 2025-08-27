@@ -1,0 +1,15 @@
+herefrom aiogram import Bot, Dispatcher
+import asyncio, os
+
+TOKEN = os.environ["TOKEN"]
+
+bot = Bot(token=TOKEN)
+dp = Dispatcher()
+
+async def main():
+    chat_id = "ӨЗ Telegram ID"
+    video_path = "output.mp4"
+    with open(video_path, "rb") as video:
+        await bot.send_video_note(chat_id=chat_id, video_note=video)
+
+asyncio.run(main())
